@@ -1,0 +1,62 @@
+/* App.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  overflow-y: auto; /* Allow vertical scrolling if needed */
+}
+
+#root {
+  min-height: 100vh; /* Ensure root takes up full viewport height */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: none;
+}
+
+.app-container {
+  min-height: 100vh; /* Ensure container takes up full height */
+  width: 100%;
+  position: relative;
+  /* Multiple background options for better compatibility */
+  background: url('/images/image7.jpg') center center/cover no-repeat fixed;
+  background-color: #f0f0f0; /* Fallback color in case image fails to load */
+}
+
+.content-wrapper {
+  min-height: 100vh; /* Ensure wrapper takes up full height */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* Optional: Add a very light overlay */
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.main-container {
+  flex: 1; /* Grow to fill available space */
+  position: relative;
+  z-index: 1; /* Position above background */
+  padding: 20px; /* Padding for inner content */
+  width: 100%;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Main content styles */
+.main-content {
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px; /* Padding for main content */
+  margin: 0 auto; /* Center content */
+  max-width: 800px; /* Max width for content */
+  width: 100%; /* Full width */
+}
+
+/* Utility classes */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.min-h-screen { min-height: 100vh; }
+.flex-grow { flex-grow: 1; }

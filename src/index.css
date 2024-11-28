@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles */
+body {
+  @apply bg-black text-mutedWhite; /* Set background and text colors for the body */
+  font-family: "DM Serif Display", serif; /* Change font to DM Serif Display */
+}
+
+.header {
+  @apply bg-deepBlue text-mutedWhite; /* Updated to use deepBlue */
+}
+
+/* Global Button Styles */
+.button {
+  @apply text-white rounded-full px-4 py-2 transition-all duration-300 ease-in-out relative overflow-hidden; /* Base button styles */
+  position: relative; /* Ensure ripple effect works correctly */
+  cursor: pointer;
+}
+
+/* Primary Button */
+.button-primary {
+  @apply bg-saffron text-black hover:bg-deepBlue; /* Custom primary button styles */
+}
+
+/* Secondary Button */
+.button-secondary {
+  @apply bg-lightGold text-warmGrey hover:bg-brickRed; /* Custom secondary button styles */
+}
+
+/* Button Hover Effects */
+.button:hover {
+  @apply scale-105; /* Slight scaling effect on hover */
+}
+
+/* Button Active Effect (for click interaction) */
+.button:active {
+  @apply scale-95; /* Slight shrink effect on click */
+}
+
+/* Ripple Effect (Custom Animation) */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Ripple effect */
+.button .ripple {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+  transform: scale(0); /* Start with no size */
+}
+
+/* Flashlight Cursor Styles */
+.flashlight-cursor {
+  position: fixed;
+  width: 100px; /* Width of the flashlight */
+  height: 100px; /* Height of the flashlight */
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none; /* Prevent interference with other elements */
+  z-index: 9999; /* Ensure it's on top of other elements */
+  transform: translate(-50%, -50%); /* Center the cursor */
+}
+
+/* Bounce Effect for Scrollbar */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0); /* Start and end position */
+  }
+  50% {
+    transform: translateY(-4px); /* Middle position: move up */
+  }
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #FFB347; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for thumb */
+  animation: bounce 2s ease-in-out infinite; /* Apply bounce effect */
+}
+
+::-webkit-scrollbar-track {
+  background: #1C3A63; /* Color of the scrollbar track */
+  border-radius: 10px; /* Rounded corners for track */
+}

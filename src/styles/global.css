@@ -1,0 +1,24 @@
+/* src/styles/global.css */
+
+/* Basic styles for the body (add any additional styles you want here) */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Adjust to your preferred font */
+}
+
+/* Apply text shadow to specific text elements */
+h1, h2, h3, h4, h5, h6, p, span, li {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Change this value as needed */
+}
+
+/* Optional: If you want to apply text shadow to all elements, uncomment the following */
+/*
+* {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+*/
+
+/* Utility class for adding text shadow to specific elements */
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
